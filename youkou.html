@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="youkou_4.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全国高専e-Sports大会参加要項</title>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PY23ZY3TB2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PY23ZY3TB2');
+</script>
+<body>
+
+    <div class="content">
+    <h1>3BOX vol.4内 全国高専e-Sports大会参加フォーム</h1>
+
+    <!--<h2 class="tyu">注※ 応募期限が11/29(金)に変更になりました</h2>-->
+
+    <h2>以下の大会規約と大会ルールを一読いただき、<nav class="ryo">了承及び遵守できることを確認のうえ、チェックボックスにチェックを入れて</nav>大会フォームより参加申し込みをお願いします。</h2>
+    <h2>参加フォームへの回答をを行った方は規約及びルールを了承したものとみなします。</h2>
+    <h2>参加フォームへの回答はチームリーダーが代表して行うものとします。</h2>
+
+    <table>
+    <td><label><input type="checkbox" id="checkbox1"><a href="kiyaku_4.html">大会規約</a> </label><br></td>
+    <td><label><input type="checkbox" id="checkbox2"><a href="rulebook_4.html">大会ルール</a></label><br></td>
+    </table>
+
+    <button id="navigateButton" onclick="navigate()">大会参加フォームへ</button>
+
+    <script>
+        // チェックボックスとボタンの要素を取得
+        const checkbox1 = document.getElementById('checkbox1');
+        const checkbox2 = document.getElementById('checkbox2');
+        const navigateButton = document.getElementById('navigateButton');
+
+        // チェックボックスの状態をチェックし、ボタンの表示/非表示を制御
+        function checkCheckboxes() {
+            if (checkbox1.checked && checkbox2.checked) {
+                navigateButton.style.display = 'inline';
+            } else {
+                navigateButton.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            checkCheckboxes(); // 初期状態を確認
+        });
+
+        // チェックボックスの状態が変わるたびにcheckCheckboxes関数を呼び出す
+        checkbox1.addEventListener('change', checkCheckboxes);
+        checkbox2.addEventListener('change', checkCheckboxes);
+
+        // ボタンがクリックされたときにYouTubeに移動する
+        function navigate() {
+            window.location.href = "https://forms.office.com/Pages/ResponsePage.aspx?id=XYPcpVeEkWK4KezivJfyDky8SqMHhFFgmC7c06AJBhUNEhVQzNaNEFGT1dCM0tLQlk0V1BLNlA4MiQlQCN0PWcu";
+        }
+    </script>
+
+
+<footer class="footer">
+    <div class="footer-text">
+      <h4>©2021- 函館工業高等専門学校 e-sports愛好会</h4>
+      <a class="SNS" href="https://x.com/kosen_eSports">X(旧Twitter)</a><br>
+      <a class="SNS" href="https://youtube.com/@hakodatekosen.e-sports?si=pF3tYW7PwXIXKoQn">Youtube</a>
+      <figure>
+        <a href="https://www.hakodate-ct.ac.jp/">
+          <img alt="高専ロゴ" src="esp4.img/k.rogo.jpg" width="175" height="150"/>
+        </a>
+        <a href="index.html">
+          <img alt="e-sportsロゴ" src="esp4.img/e.rogo.jpg" width="150"/>
+        </a>
+      </figure>
+    </div>
+  </footer>
+
+</body>
+</html>
