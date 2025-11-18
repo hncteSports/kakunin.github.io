@@ -1,0 +1,193 @@
+@charset "utf-8";
+
+html, body {
+    height: 100%; /* 必要な高さを確保するため */
+    margin: 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    margin: 0 auto; 
+    max-width: 1000px; 
+    margin-top: 20px; 
+
+}
+
+.ryo{
+    color: red;
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+
+.tyu{
+    color: brown;
+}
+
+body{
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    background-color: #dddddd;
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 50px 0;
+    align-items: center;     /* 垂直方向の中央揃え */
+    display: flex;
+    flex-direction: column;
+}
+
+.footer{
+    color: #dddddd;
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px; /* フッターの上にスペースを追加 */
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+h3{
+    font-size: 24px;
+}
+
+li{
+    font-size: 20px;
+
+}
+
+p{
+    font-size: 22px;
+}
+
+h1{
+    text-align: center;
+    border-bottom: solid 4px #17aab5;
+}
+
+h2{
+    font-size: 26px;
+    text-align: center;
+}
+
+.sento{
+    counter-reset: q-counter 0;
+}
+
+a{
+    font-size: 25px;
+}
+
+
+/* styles.css */
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    color: #666666;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.submit-botton {
+    text-align: center;
+}
+
+.checkbox{
+    size: 30px;
+}
+
+td{
+    border: 1px solid #888888;
+    padding: 6px;
+}
+
+table{
+    border-collapse: collapse;
+    border: 2px solid #888888;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 22px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 18px;
+    }
+    table {
+        width: 100%; /* テーブルを画面にフィットさせる */
+        border-collapse: collapse;
+    }
+    button {
+        width: 100%; /* ボタンを画面幅にフィットさせる */
+        padding: 15px; /* ボタンのパディングを増やす */
+    }
+
+    body {
+        padding: 20px; /* スマホの余白を減らす */
+        max-width: 1000px;
+        align-items: center;     /* 垂直方向の中央揃え */
+        display: flex;
+        flex-direction: column;
+        max-width: 1200px; /* 最大幅を設定 */
+        margin: 0;
+    }
+
+    /*.content{}*/
+
+    h1 {
+        font-size: 24px; /* タイトルサイズを小さくする */
+    }
+
+    h2 {
+        font-size: 18px; /* 見出しのサイズを小さくする */
+    }
+
+    h3 {
+        font-size: 26px; /* 小見出しのサイズを小さくする */
+    }
+
+    .catch {
+        max-width: 90%; /* キャッチフレーズの幅を広げる */
+        font-size: 18px; /* フォントサイズを小さくする */
+    }
+
+    .title {
+        font-size: 18px; /* タイトルのフォントサイズを調整 */
+    }
+
+    .bosyu {
+        font-size: 30px; /* 募集タイトルのサイズを調整 */
+    }
+
+    .footer {
+        font-size: 14px; /* フッターのフォントサイズを小さくする */
+    }
+
+    h4 {
+        font-size: 24px; /* 他の見出しサイズ調整 */
+    }
+
+    li{
+        font-size: 20px;
+    }
+
+    .footer img {
+        height: 100px;
+        width: auto;
+    }
+    
+}
