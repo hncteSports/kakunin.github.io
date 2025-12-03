@@ -4,11 +4,6 @@ body {
     background-color: red !important;
 }
 
-html, body {
-    height: 100%; /* 必要な高さを確保するため */
-    margin: 0;
-}
-
 .content {
     display: flex;
     flex-direction: column; 
