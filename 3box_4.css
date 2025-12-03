@@ -1,190 +1,401 @@
 @charset "utf-8";
 
+/* --- 共通 --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  height: 100%;
+  counter-reset: q-counter 0;
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- セクションレイアウト --- */
 .content {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    margin: 0 auto; 
-    max-width: 1000px; 
-    margin-top: 20px; 
-
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
-.ryo{
-    color: red;
-    text-decoration: underline;
-    text-decoration-color: red;
+section {
+  padding: 48px 0;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-.tyu{
-    color: brown;
+h1, h2, h3, h4 {
+  text-align: center;
+  margin: 0 0 20px;
 }
 
-body{
-    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
-    background-color: #dddddd;
-    margin: 0 auto;
-    max-width: 1000px;
-    padding: 50px 0;
-    align-items: center;     /* 垂直方向の中央揃え */
-    display: flex;
-    flex-direction: column;
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
-.footer{
-    color: #dddddd;
-    background-color: black;
-    padding: 20px;
-    text-align: center;
-    margin-top: 50px; /* フッターの上にスペースを追加 */
-    width: 100%;
-    position: relative;
-    bottom: 0;
+h2 {
+  font-size: 2rem;
+  color: #1a73e8;
+  font-weight: 600;
 }
 
-h3{
-    font-size: 24px;
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
-li{
-    font-size: 20px;
-
-}
-
-p{
-    font-size: 22px;
-}
-
-h1{
-    text-align: center;
-    border-bottom: solid 4px #17aab5;
-}
-
-h2{
-    font-size: 26px;
-    text-align: center;
-}
-
-.sento{
-    counter-reset: q-counter 0;
-}
-
-a{
-    font-size: 25px;
+h4 {
+  font-size: 1.25rem;
 }
 
 
-/* styles.css */
-button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-    color: #666666;
+.bu {
+  display: block;
+  width: fit-content;       /* 内容に合わせる */
+  margin: 32px auto;        /* 自動で左右中央寄せ */
+  text-align: center;
+  font-size: 75px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #1a73e8 0%, #0073ff 100%);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 12px;
 }
 
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+
+
+/* --- フッター --- */
+.footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 60px;
 }
 
-button:hover:not(:disabled) {
-    background-color: #0056b3;
+.footer a {
+  color: #1a73e8;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 8px;
 }
 
-.submit-botton {
-    text-align: center;
+.footer img {
+  margin: 12px;
+  border-radius: 8px;
 }
 
-.checkbox{
-    width: 30px;
-    height: 30px;
+
+.nav-left .logo img {
+  height: 50px;
+  width: auto;
 }
 
-td{
-    border: 1px solid #888888;
-    padding: 6px;
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-table{
-    border-collapse: collapse;
-    border: 2px solid #888888;
+/* --- SNSアイコン --- */
+.social-icons {
+  display: flex;
+  gap: 10px;
 }
 
+.icon-circle img {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-circle:hover {
+  background-color: #ddd;
+}
+
+.menu a:hover {
+  color: #1a73e8;
+}
+
+/* --- コンテンツとの重なり対策 --- */
+body {
+  padding-top: 80px; /* ナビバー分の余白を上にとる */
+}
+
+/* --- メニュー（初期非表示） --- */
+.menu {
+  display: none;
+  position: absolute;
+  top: 70px; /* ナビバーの下 */
+  right: 40px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+}
+
+
+/* --- 固定ナビゲーションバー --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #ffffff; /* 白枠 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.nav-left .logo img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* --- SNSアイコン --- */
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 2px solid #ffffff; /* 白枠 */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.icon-circle img {
+  width: 100%;
+  height: 100%;
+}
+
+.icon-circle:hover {
+  background-color: #f0f0f0;
+}
+
+.title{
+  font-size: 64px;
+  color: #1a73e8;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: #1a73e8;
+}
+
+.honbun {
+  font-size: 24px;
+  text-align: center;
+}
+
+.rinnku {
+  display: block;          /* これ重要！ */
+  width: fit-content;      /* テキストに合わせる */
+  margin: 0 auto;          /* 中央寄せ */
+  font-size: 64px;
+  text-align: center;
+  color: red;
+}
+
+
+.komi{
+  font-size: 40px;
+  text-align: center;
+  color: #1a73e8;
+}
+
+.kako{
+  text-align: center;
+  font-size: 48px;
+}
+
+.fade {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 3s, transform 3s;
+}
+
+.fade.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.confetti {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+}
+
+.fami::before{
+  content: "Q" counter(q-counter);
+  counter-increment: q-counter;
+  color: red;
+  padding-right: 8px;
+}
+
+.right{
+list-style-position: inside; /* ●を文字の内側に */
+  text-align: left;           /* 各行を右揃え */
+  padding: 0;
+  margin: 0;
+}
+
+.dive{
+  display: flex;
+  justify-content: center;
+}
+
+.honbu{
+  font-size: 42px;
+}
+
+iframe{
+  display: flex;
+  margin: auto;
+}
+
+
+/* --- レスポンシブ（スマホ） --- */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 22px;
-    }
-    h2 {
-        font-size: 20px;
-    }
-    p {
-        font-size: 18px;
-    }
-    table {
-        width: 100%; /* テーブルを画面にフィットさせる */
-        border-collapse: collapse;
-    }
-    button {
-        width: 100%; /* ボタンを画面幅にフィットさせる */
-        padding: 15px; /* ボタンのパディングを増やす */
-    }
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+  }
 
-    body {
-        padding: 20px; /* スマホの余白を減らす */
-        max-width: 1000px;
-        align-items: center;     /* 垂直方向の中央揃え */
-        display: flex;
-        flex-direction: column;
-        max-width: 1200px; /* 最大幅を設定 */
-        margin: 0;
-    }
+  .nav-right {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
 
-    /*.content{}*/
+  .menu ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
 
-    h1 {
-        font-size: 24px; /* タイトルサイズを小さくする */
-    }
+  .icon-circle {
+    width: 35px;
+    height: 35px;
+  }
 
-    h2 {
-        font-size: 18px; /* 見出しのサイズを小さくする */
-    }
+  .icon-circle img {
+    width: 18px;
+    height: 18px;
+  }
+}
 
-    h3 {
-        font-size: 26px; /* 小見出しのサイズを小さくする */
-    }
+@media (min-width: 900px) {
+  .menu {
+    display: block;
+    position: static;
+    box-shadow: none;
+    padding: 0;
+  }
+  .menu ul {
+    flex-direction: row;
+    gap: 25px;
+  }
+}
 
-    .catch {
-        max-width: 90%; /* キャッチフレーズの幅を広げる */
-        font-size: 18px; /* フォントサイズを小さくする */
-    }
 
-    .title {
-        font-size: 18px; /* タイトルのフォントサイズを調整 */
-    }
 
-    .bosyu {
-        font-size: 30px; /* 募集タイトルのサイズを調整 */
-    }
+/* --- スマホ対応 --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+    height: 60px;
+  }
 
-    .footer {
-        font-size: 14px; /* フッターのフォントサイズを小さくする */
-    }
+  .nav-left .logo img {
+    height: 40px;
+  }
 
-    h4 {
-        font-size: 24px; /* 他の見出しサイズ調整 */
-    }
+  .menu ul {
+    gap: 15px;
+  }
 
-    li{
-        font-size: 20px;
-    }
+  .menu a {
+    font-size: 14px;
+  }
 
-    .footer img {
-        height: 100px;
-        width: auto;
-    }
-    
+  .icon-circle {
+    width: 35px;
+    height: 35px;
+  }
+
+  .icon-circle img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+/* --- レスポンシブ --- */
+@media (max-width: 768px) {
+  .content {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .bu {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+  }
 }
