@@ -159,6 +159,12 @@ body {
   font-weight: 600;
 }
 
+.toplogo{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 /* --- 固定ナビゲーションバー --- */
 .navbar {
