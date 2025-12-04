@@ -162,7 +162,7 @@ body {
 .toplogo{
   width: 100%;
   height: auto;
-  display: block;
+  display: flex;
   margin: auto;
 }
 
