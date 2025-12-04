@@ -23,6 +23,19 @@ img {
   height: auto;
 }
 
+/* 最上部の画像（大会ロゴ風）の余白を削除 */
+main > div[style="text-align: center;"] {
+  padding: 0;
+  margin: 0;
+}
+
+/* 画像が画面幅いっぱいに広がるように設定 */
+main > div[style="text-align: center;"] img {
+  width: 100%; /* 画像の幅を親要素に合わせる */
+  height: auto;
+  display: block; /* インライン要素特有の余白を消す */
+}
+
 /* --- セクションレイアウト --- */
 .content {
   max-width: 1500;
@@ -456,5 +469,16 @@ iframe{
   .footer img {
     width: 100px; /* ロゴサイズ調整 */
     height: auto;
+  }
+  /* メディアクエリ内で既に設定されている親要素の余白も削除 */
+  main > div[style="text-align: center;"] {
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* 画像が画面幅いっぱいに広がるように設定 */
+  main > div[style="text-align: center;"] img {
+    width: 100%;
+    /* スマホ用に80%にしていた設定を上書きして100%にする */
   }
 }
