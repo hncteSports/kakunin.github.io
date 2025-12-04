@@ -12,6 +12,10 @@ html, body {
   max-width: 3000px
 }
 
+.menu{
+  display: none;
+}
+
 *,
 *::before,
 *::after {
