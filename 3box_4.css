@@ -135,7 +135,6 @@ body {
 
 /* --- メニュー（初期非表示） --- */
 .menu {
-  display: none;
   position: absolute;
   top: 70px; /* ナビバーの下 */
   right: 40px;
