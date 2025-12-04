@@ -12,9 +12,7 @@ html, body {
   max-width: 3000px
 }
 
-.menu{
-  display: none;
-}
+
 
 *,
 *::before,
@@ -386,6 +384,10 @@ iframe{
     font-size: 20px; /* 48px -> 20px */
     word-break: break-all; /* 長いURL等の改行 */
   }
+
+  .menu{
+  display: none;
+}
 
   /* リンク (.rinnku) */
   .rinnku {
