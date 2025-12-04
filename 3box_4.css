@@ -158,15 +158,6 @@ body {
   color: #222;
   font-weight: 600;
 }
-
-.toplogo{
-  width: 100%;
-  height: auto;
-  display: flex;
-  text-aligh: center;
-}
-
-
 /* --- 固定ナビゲーションバー --- */
 .navbar {
   position: fixed;
@@ -457,4 +448,3 @@ iframe{
     height: auto;
   }
   }
-}
