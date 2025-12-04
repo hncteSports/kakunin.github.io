@@ -9,6 +9,7 @@ html, body {
   color: #222;
   height: 100%;
   counter-reset: q-counter 0;
+  max-width: 3000px
 }
 
 *,
