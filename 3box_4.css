@@ -494,4 +494,50 @@ iframe{
     width: 100px; /* ロゴサイズ調整 */
     height: auto;
   }
+
+  .guest-card {
+    flex-direction: column;   /* 縦並びにする */
+    text-align: center;        /* 中央寄せ */
+    padding: 20px;
+  }
+
+  .guest-photo img {
+    width: 60%;               /* 画面に合わせて縮小 */
+    max-width: 260px;
+  }
+
+  .guest-name {
+    font-size: 26px;
+  }
+
+  .accent-line {
+    margin: 10px auto 20px;   /* 中央に配置 */
+    width: 100px;
+  }
+
+  .guest-text {
+    font-size: 16px;
+  }
+}
+
+
+/* ===== さらに小さいスマホ（480px以下） ===== */
+@media (max-width: 480px) {
+  .guest-photo img {
+    width: 80%;
+  }
+
+  .guest-name {
+    font-size: 22px;
+  }
+
+  .guest-text {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .guest-card {
+    padding: 15px;
+    gap: 20px;
+  }
   }
