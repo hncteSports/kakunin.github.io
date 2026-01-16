@@ -271,6 +271,8 @@ body {
   left: 0;
   margin: auto;
   overflow: hidden;
+  /* ↓これを追加 */
+  pointer-events: none;
 }
 
 .fami::before{
